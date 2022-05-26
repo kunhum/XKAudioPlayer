@@ -7,8 +7,16 @@
 //
 
 #import "OCViewController.h"
+@import XKAudioPlayer;
+
+NSString *mp31 = @"http://downsc.chinaz.net/Files/DownLoad/sound1/201906/11582.mp3";
+NSString *mp32 = @"http://downsc.chinaz.net/files/download/sound1/201206/1638.mp3";
 
 @interface OCViewController ()
+
+@property (nonatomic, strong) XKAudioPlayer *player;
+
+@property (nonatomic, assign) NSInteger tag;
 
 @end
 
@@ -17,16 +25,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.player = [XKAudioPlayer new];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    
+    if (self.tag == 0) {
+        [self.player playWithPaths:@[mp31, mp32]];
+        self.tag++;
+    } else {
+        [self.player appendWithPath:mp31];
+    }
+    
+    NSLog(@"OC 点击");
 }
-*/
 
 @end

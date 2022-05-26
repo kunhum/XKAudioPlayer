@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XKAudioPlayer'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of XKAudioPlayer.'
+  s.version          = '0.0.2'
+  s.summary          = '简易播放器'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,14 +21,14 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/kenneth/XKAudioPlayer'
+  s.homepage         = 'https://github.com/kunhum/XKAudioPlayer'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'kenneth' => 'kunhum@163.com' }
-  s.source           = { :git => 'https://github.com/kenneth/XKAudioPlayer.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/kunhum/XKAudioPlayer.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'XKAudioPlayer/Classes/**/*'
   
@@ -38,5 +38,6 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'RxSwift'
+  s.dependency 'RxCocoa'
 end
